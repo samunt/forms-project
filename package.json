@@ -10,6 +10,13 @@
   "dependencies": {
     "next": "10.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "@material-ui/core": "4.3.2",
+    "formik": "1.5.8",
+    "formik-material-ui": "0.0.20",
+    "react-scripts": "3.0.1",
+    "react-swipeable-views": "0.13.3",
+    "yup": "0.27.0"
   }
 }
+
