@@ -1,14 +1,8 @@
 import React from "react";
-import { FormikWizard } from "formik-wizard";
-import FormWrapper from "../components/FormWrapper";
-import steps from "../components/steps";
-import { Box } from "@material-ui/core";
 import Head from "next/head";
+import MaterialLayout from '../components/Layout/MaterialLayout';
+import CheckoutPage from '../components/CheckoutPage';
 export default function Home() {
-    const handleSubmit = React.useCallback(values => {
-        console.log("full values:", values);
-    }, []);
-
     return (
         <>
             <Head>
@@ -16,13 +10,11 @@ export default function Home() {
                     window.setImmediate = window.setTimeout;
                 </script>
             </Head>
-            <Box textAlign="center">
-                <FormikWizard
-                    steps={steps}
-                    onSubmit={handleSubmit}
-                    render={FormWrapper}
-                />
-            </Box>
+            <div>
+                <MaterialLayout>
+                    <CheckoutPage />
+                </MaterialLayout>
+            </div>
         </>
     );
 }

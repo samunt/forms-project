@@ -8,10 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@date-io/date-fns": "^2.10.6",
     "@material-ui/core": "4.3.2",
     "formik": "1.5.8",
     "formik-material-ui": "0.0.20",
     "formik-wizard": "^3.1.2",
+    "lodash": "^4.17.20",
     "next": "10.0.3",
     "react": "16.8.0",
     "react-albus": "^2.0.0",
@@ -19,5 +21,9 @@
     "react-scripts": "3.0.1",
     "react-swipeable-views": "0.13.3",
     "yup": "0.27.0"
+  },
+  "devDependencies": {
+    "@material-ui/pickers": "^3.2.10",
+    "prop-types": "^15.7.2"
   }
 }
