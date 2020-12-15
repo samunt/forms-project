@@ -14,3 +14,19 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.primary-button-align > button:first-child {
+  position: relative;
+  right: 8px;
+  width: 150px;
+}
+
+.primary-button-align > button:last-child {
+  position: relative;
+  left: 8px;
+  width: 150px;
+}
+
+input[type="text"] {
+  width: 150px;
+}

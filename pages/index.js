@@ -1,16 +1,29 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Form from './form'
 import React from "react";
+import { FormikWizard } from "formik-wizard";
+import FormWrapper from "../components/FormWrapper";
+import steps from "../components/steps";
+import { Box } from "@material-ui/core";
+import Head from "next/head";
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    const handleSubmit = React.useCallback(values => {
+        console.log("full values:", values);
+    }, []);
 
-      <Form/>
-    </div>
-  )
+    return (
+        <>
+            <Head>
+                <script>
+                    window.setImmediate = window.setTimeout;
+                </script>
+            </Head>
+            <Box textAlign="center">
+                <FormikWizard
+                    steps={steps}
+                    onSubmit={handleSubmit}
+                    render={FormWrapper}
+                />
+            </Box>
+        </>
+    );
 }
+

@@ -1,0 +1,1 @@
+A component is any reusable piece. We don't do validation or anything special in components.
