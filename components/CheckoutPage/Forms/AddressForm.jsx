@@ -16,7 +16,7 @@ export default function AddressForm(props) {
             <Typography variant="h6" gutterBottom>
                 Personal Details
             </Typography>
-            <Grid container spacing={3} gutter>
+            <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                     <InputField name={firstName.name} label={firstName.label} fullWidth />
                 </Grid>
