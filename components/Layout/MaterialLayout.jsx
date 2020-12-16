@@ -1,6 +1,6 @@
 import React from 'react';
 import { Paper, CssBaseline } from '@material-ui/core';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -12,13 +12,13 @@ export default function MaterialLayout(props) {
     const classes = useStyle();
 
     return (
-        <ThemeProvider theme={theme}>
+        <MuiThemeProvider theme={theme}>
             <CssBaseline />
             <Header />
             <div className={classes.root}>
                 <Paper className={classes.paper}>{children}</Paper>
             </div>
             <Footer />
-        </ThemeProvider>
+        </MuiThemeProvider>
     );
 }
