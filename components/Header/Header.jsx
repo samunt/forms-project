@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <AppBar position="absolute" color="default" className={classes.appBar}>
             <Toolbar>
-                <Typography variant="h6" color="inherit" noWrap>
+                <Typography variant="h6" color="inherit" noWrap className={classes.title}>
                     Generational Wealth Group
                 </Typography>
             </Toolbar>

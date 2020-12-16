@@ -1,0 +1,55 @@
+import React from 'react';
+import { Grid, Typography } from '@material-ui/core';
+import { CheckboxField } from '../../FormFields';
+import FormHelperText from "@material-ui/core/FormHelperText";
+
+export default function SpouseForm(props) {
+    const {
+        formField: {
+            spouse
+        }
+    } = props;
+
+    const [state, setState] = React.useState({
+        yes: false,
+        no: false,
+    });
+
+    const handleChange = (event) => {
+        setState({ ...state, [event.target.name]: event.target.checked });
+    };
+
+    const { yes, no } = state;
+    const error = [yes, no].filter((v) => v).length !== 1;
+
+    return (
+        <React.Fragment>
+            <Typography variant="h6" gutterBottom>
+                Do you have a spouse?
+            </Typography>
+            <Grid container spacing={3}>
+                <Grid item xs={12} md={6}>
+                    <CheckboxField
+                        name={spouse.name}
+                        label="Yes"
+                        checked={yes}
+                        onChange={handleChange}
+                    />
+                    <CheckboxField
+                        name={spouse.name}
+                        label="No"
+                        checked={no}
+                        onChange={handleChange}
+                    />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <FormHelperText style={{color: 'red'}}>{error ? 'Please select only one' : ''}</FormHelperText>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    {/*IF YES THEN HOW OLD*/}
+                    {/*<InputField name={cvv.name} label={cvv.label} fullWidth />*/}
+                </Grid>
+            </Grid>
+        </React.Fragment>
+    );
+}

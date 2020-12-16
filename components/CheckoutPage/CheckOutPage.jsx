@@ -10,17 +10,17 @@ import {
 import { Formik, Form } from 'formik';
 
 import AddressForm from './Forms/AddressForm';
-import PaymentForm from './Forms/PaymentForm';
+import SpouseForm from './Forms/SpouseForm';
 import ReviewOrder from './ReviewOrder';
 import CheckoutSuccess from './CheckoutSuccess/CheckoutSuccess';
 
 import validationSchema from './FormModel/validationSchema';
-import checkoutFormModel from './FormModel/checkoutFormModel';
+import checkoutFormModel from './FormModel/formModels';
 import formInitialValues from './FormModel/formInitialValues';
 
 import useStyles from './styles';
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Personal', 'Family', 'Financial'];
 const { formId, formField } = checkoutFormModel;
 
 function _renderStepContent(step) {
@@ -28,7 +28,7 @@ function _renderStepContent(step) {
         case 0:
             return <AddressForm formField={formField} />;
         case 1:
-            return <PaymentForm formField={formField} />;
+            return <SpouseForm formField={formField} />;
         case 2:
             return <ReviewOrder />;
         default:
@@ -70,8 +70,8 @@ export default function CheckoutPage() {
 
     return (
         <React.Fragment>
-            <Typography component="h1" variant="h4" align="center">
-                Checkout
+            <Typography component="h1" variant="h4" align="center" style={{position: 'relative', top: '5px'}}>
+                Onboarding
             </Typography>
             <Stepper activeStep={activeStep} className={classes.stepper}>
                 {steps.map(label => (
