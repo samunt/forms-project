@@ -5,10 +5,8 @@ const {
     formField: {
         firstName,
         lastName,
-        address1,
-        city,
-        zipcode,
-        country,
+        email,
+        phone,
         nameOnCard,
         cardNumber,
         expiryDate,
@@ -17,25 +15,14 @@ const {
 } = checkoutFormModel;
 
 const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 export default [
     Yup.object().shape({
         [firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
         [lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
-        [address1.name]: Yup.string().required(`${address1.requiredErrorMsg}`),
-        [city.name]: Yup.string()
-            .nullable()
-            .required(`${city.requiredErrorMsg}`),
-        [zipcode.name]: Yup.string()
-            .required(`${zipcode.requiredErrorMsg}`)
-            .test(
-                'len',
-                `${zipcode.invalidErrorMsg}`,
-                val => val && val.length === 5
-            ),
-        [country.name]: Yup.string()
-            .nullable()
-            .required(`${country.requiredErrorMsg}`)
+        [email.name]: Yup.string().email().required(`${email.requiredErrorMsg}`),
+        [phone.name]: Yup.string().matches(phoneRegExp,`${phone.requiredErrorMsg}`),
     }),
     Yup.object().shape({
         [nameOnCard.name]: Yup.string().required(`${nameOnCard.requiredErrorMsg}`),
