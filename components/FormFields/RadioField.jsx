@@ -59,7 +59,6 @@ function StyledRadio(props) {
             checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
             icon={<span className={classes.icon} />}
             {...props}
-            onChange={(e) => console.log(e)}
         />
     );
 }
