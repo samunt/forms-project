@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
-import { CheckboxField } from '../../FormFields';
+import { CheckboxField, RadioField } from '../../FormFields';
 import FormHelperText from "@material-ui/core/FormHelperText";
+import CustomizedRadios from "../../FormFields/RadioField";
 
 export default function SpouseForm(props) {
     const {
@@ -29,18 +30,19 @@ export default function SpouseForm(props) {
             </Typography>
             <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
-                    <CheckboxField
-                        name={spouse.name}
-                        label="Yes"
-                        checked={yes}
-                        onChange={handleChange}
-                    />
-                    <CheckboxField
-                        name={spouse.name}
-                        label="No"
-                        checked={no}
-                        onChange={handleChange}
-                    />
+                    {/*<CheckboxField*/}
+                    {/*    name={spouse.name}*/}
+                    {/*    label="Yes"*/}
+                    {/*    checked={yes}*/}
+                    {/*    onChange={handleChange}*/}
+                    {/*/>*/}
+                    {/*<CheckboxField*/}
+                    {/*    name={spouse.name}*/}
+                    {/*    label="No"*/}
+                    {/*    checked={no}*/}
+                    {/*    onChange={handleChange}*/}
+                    {/*/>*/}
+                    <CustomizedRadios/>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <FormHelperText style={{color: 'red'}}>{error ? 'Please select only one' : ''}</FormHelperText>
