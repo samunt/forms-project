@@ -3,6 +3,8 @@ import { Grid, Typography } from '@material-ui/core';
 import { CheckboxField, RadioField } from '../../FormFields';
 import FormHelperText from "@material-ui/core/FormHelperText";
 import CustomizedRadios from "../../FormFields/RadioField";
+import InputField from "../../FormFields/InputField";
+import {event} from "next/dist/build/output/log";
 
 export default function SpouseForm(props) {
     const {
@@ -42,12 +44,13 @@ export default function SpouseForm(props) {
                     {/*    checked={no}*/}
                     {/*    onChange={handleChange}*/}
                     {/*/>*/}
-                    <CustomizedRadios/>
+                    <CustomizedRadios />
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <FormHelperText style={{color: 'red'}}>{error ? 'Please select only one' : ''}</FormHelperText>
                 </Grid>
                 <Grid item xs={12} md={6}>
+                    <InputField name="spouseAge" label="Spouse Age" fullWidth />
                     {/*IF YES THEN HOW OLD*/}
                     {/*<InputField name={cvv.name} label={cvv.label} fullWidth />*/}
                 </Grid>
